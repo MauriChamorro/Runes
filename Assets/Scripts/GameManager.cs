@@ -7,6 +7,7 @@ namespace Assets.Scripts
 {
     public class GameManager : MonoBehaviour
     {
+        public CameraShake cameraShake;
         public GameObject health;
         public GameObject healthTrans;
 
@@ -203,10 +204,6 @@ namespace Assets.Scripts
                     levelText.text = "TERMINÓ MAL";
                     break;
             }
-
-            print("CantSpawn-->" + currentLevel.CantElementSpanw);
-            print("ClockTime-->" + currentLevel.ClockTime);
-            print("SpeedHealth-->" + currentLevel.SpeedHealth);
         }
 
         public void StartGame()
@@ -307,8 +304,9 @@ namespace Assets.Scripts
             }
             else if (pNameElement.Contains("HealthDown"))
             {
-                HealthAdd(1);
+                StartCoroutine(cameraShake.Shake(0.1f, 0.3f));
                 soundManager.PlayElementSound("HealthDown");
+                HealthAdd(1);
             }
             else if (pNameElement.Contains("TimeUp"))
             {

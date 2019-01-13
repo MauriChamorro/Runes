@@ -201,7 +201,7 @@ namespace Assets.Scripts
                     levelText.text = "Nivel 3";
                     break;
                 default:
-                    levelText.text = "TERMINÓ MAL";
+                    levelText.text = "ERROR";
                     break;
             }
         }

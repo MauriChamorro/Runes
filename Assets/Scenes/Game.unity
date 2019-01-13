@@ -5490,6 +5490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6ea3a4c5d7ce84eaba958169efe3ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiAnimator: {fileID: 157889492}
   cameraShake: {fileID: 721814659}
   health: {fileID: 1278597880}
   healthTrans: {fileID: 435406950}

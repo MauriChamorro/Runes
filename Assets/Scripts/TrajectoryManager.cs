@@ -97,7 +97,7 @@ public class TrajectoryManager : MonoBehaviour
         ElementsPrefabs.Add(Element3Prefab);
         ElementsPrefabs.Add(Element4Prefab);
 
-        goParent = new GameObject();
+        goParent = new GameObject() { name = "RunesParent"};
 
         for (int i = 0; i < CantSpawn; i++)
         {

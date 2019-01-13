@@ -50,6 +50,7 @@ namespace Assets.Scripts
             if (Input.GetButtonDown("Cancel"))
             {
                 MenuPanel.SetActive(MenuPanel.gameObject.activeSelf ? false : true);
+                uiAnimator.SetBool("ShowMenu", MenuPanel.gameObject.activeSelf ? true : false);
 
                 //GeneralGameValues.StopGame();
 
@@ -306,6 +307,7 @@ namespace Assets.Scripts
             {
                 HealthAdd(-1);
                 soundManager.PlayElementSound("HealthUp");
+                uiAnimator.SetTrigger("GreenRune");
             }
             else if (pNameElement.Contains("HealthDown"))
             {
@@ -317,11 +319,14 @@ namespace Assets.Scripts
             {
                 TimeAdd(-1);
                 soundManager.PlayElementSound("TimeUp");
+                uiAnimator.SetTrigger("YellowRune");
             }
             else if (pNameElement.Contains("TimeDown"))
             {
                 TimeAdd(1);
                 soundManager.PlayElementSound("TimeDown");
+                uiAnimator.SetTrigger("BlueRune");
+
             }
             else
             {

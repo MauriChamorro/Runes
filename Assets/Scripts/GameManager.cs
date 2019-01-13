@@ -279,8 +279,6 @@ namespace Assets.Scripts
 
             if (Physics.Raycast(hit, out rhit) && rhit.transform.gameObject.tag == "Element")
             {
-                print(rhit.transform.name);
-
                 DetermineEfect(rhit.transform.name);
 
                 rhit.transform.gameObject.SetActive(false);
@@ -359,7 +357,6 @@ namespace Assets.Scripts
             if (auxText)
             {
                 auxText.fontSize = 60;
-                print(auxText.name);
                 soundManager.PlaySFXClipName("over-button");
             }
         }
@@ -369,7 +366,6 @@ namespace Assets.Scripts
             Text auxText = textButtons.FirstOrDefault(t => t.name == pNameText);
             if (auxText)
             {
-                print(auxText.name);
                 auxText.fontSize = 50;
             }
         }

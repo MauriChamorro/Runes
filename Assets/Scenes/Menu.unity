@@ -1013,6 +1013,80 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.Toggle+ToggleEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_IsOn: 1
+--- !u!1 &449955592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 449955593}
+  - component: {fileID: 449955595}
+  - component: {fileID: 449955594}
+  m_Layer: 5
+  m_Name: EscToBackText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &449955593
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449955592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -318.50006, y: -266.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2096561406}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.20500001, y: 0.115}
+  m_AnchoredPosition: {x: -0.5000305, y: -1.2000122}
+  m_SizeDelta: {x: -1, y: -2.2999992}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &449955594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449955592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.844}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: f8a1f25e3d2e51241b88eb5c170e07be, type: 3}
+    m_FontSize: 30
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 2
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 5
+  m_Text: Esc para volver
+--- !u!222 &449955595
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449955592}
 --- !u!1 &503085643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2865,7 +2939,7 @@ MonoBehaviour:
   m_Text: "Tendr\xE1s un <color=#FFCD53FF>Tiempo de supervivencia </color>, el cual
     disminuye constantemente as\xED como tu <color=#03EB39>Vida</color>\n\nTu objetivo
     ser\xE1 mantenerte con <color=#03EB39>Vida</color> hasta que el <color=#FFCD53FF>Tiempo
-    de supervivencia</color> llegue a cero.\n\nPara sovrevivir deber\xE1s <color=#DDF600>Pickear</color>
+    de supervivencia</color> llegue a cero.\n\nPara sobrevivir deber\xE1s <color=#DDF600>Pickear</color>
     ciertas <color=cyan>Runas</color> para obtener un aumento de <color=#03EB39>Vida</color>
     o para reducir el <color=#FFCD53FF>Tiempo de supervicencia</color>.\n\n<color=#DDF600>\xA1Cuidado!</color>\n
     Ciertas <color=cyan>Runas</color> pueden perjudicarte.\n\n<size=7>\xA1Buena Suerte!</size>"
@@ -5065,6 +5139,7 @@ RectTransform:
   - {fileID: 694565617}
   - {fileID: 225528906}
   - {fileID: 1755558635}
+  - {fileID: 449955593}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5133,6 +5208,7 @@ MonoBehaviour:
   mutedSFX: {fileID: 436826935}
   volumeMusic: {fileID: 273673593}
   volumeSFX: {fileID: 1722975285}
+  backText: {fileID: 449955594}
 --- !u!1 &2145511878
 GameObject:
   m_ObjectHideFlags: 0

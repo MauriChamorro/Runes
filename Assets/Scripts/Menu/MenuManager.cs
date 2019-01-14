@@ -19,6 +19,8 @@ public class MenuManager : MonoBehaviour
     public Slider volumeMusic;
     public Slider volumeSFX;
 
+    public Text backText;
+
     void Start()
     {
         soundManager = SoundManager.Instance;
@@ -40,6 +42,7 @@ public class MenuManager : MonoBehaviour
         {
             PlaySFXClipName("back-menu");
             SelectPanel("MenuPanel");
+            backText.gameObject.SetActive(false);
         }
     }
 
@@ -92,6 +95,7 @@ public class MenuManager : MonoBehaviour
             if (panel.name == pNamePanel)
             {
                 panel.SetActive(true);
+                backText.gameObject.SetActive(true);
                 soundManager.PlaySFXClipName("select-button");
             }
             else

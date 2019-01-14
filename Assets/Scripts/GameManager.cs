@@ -75,26 +75,26 @@ namespace Assets.Scripts
 
                     if (countToPlayText.text == "3")
                     {
-                        uiAnimator.SetBool("Count", true);
+                        //uiAnimator.SetBool("Count", true);
                         //imagen 1
                     }
 
                     if (countToPlayText.text == "2")
                     {
-                        uiAnimator.SetBool("Count", true);
+                        //uiAnimator.SetBool("Count", true);
 
                         //imagen 2
                     }
 
                     if (countToPlayText.text == "1")
                     {
-                        uiAnimator.SetBool("Count", true);
+                        //uiAnimator.SetBool("Count", true);
                         //imagen 3
                     }
 
                     if (countToPlayText.text == "0")
                     {
-                        uiAnimator.SetBool("Count", true);
+                        //uiAnimator.SetBool("Count", true);
                         countToPlayText.text = "GO";
                         //imagen go
                     }
@@ -204,6 +204,7 @@ namespace Assets.Scripts
                     {
                 uiAnimator.SetTrigger("LevelUp");
                         levelText.text = "Nivel 3";
+                        uiAnimator.SetTrigger("LevelUp");
                     }
                     break;
                 default:

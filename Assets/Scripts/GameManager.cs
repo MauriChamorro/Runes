@@ -11,7 +11,6 @@ namespace Assets.Scripts
 
         public CameraShake cameraShake;
         public GameObject health;
-        public GameObject healthTrans;
 
         private Level currentLevel;
         public GameObject MenuPanel;
@@ -157,12 +156,6 @@ namespace Assets.Scripts
                     health.transform.position,
                     minHealth.position,
                     perc);
-
-                healthTrans.transform.position = Vector3.Lerp(
-                   healthTrans.transform.position,
-                   minHealth.position,
-                   perc);
-
                 #endregion
             }
         }
@@ -188,7 +181,6 @@ namespace Assets.Scripts
             gameOverText.enabled = false;
 
             health.transform.position = new Vector3(0f, currentLevel.MaxHealth, 93f);
-            healthTrans.transform.position = new Vector3(1.5f, currentLevel.MaxHealth, 93f);
             currentHealthTime = 0f;
             speedTimeHealth = currentLevel.SpeedHealth;
             journeyLength = Vector3.Distance(health.transform.position, minHealth.position);
@@ -203,10 +195,16 @@ namespace Assets.Scripts
                     levelText.text = "Nivel 1";
                     break;
                 case 2:
-                    levelText.text = "Nivel 2";
+                    {
+                        levelText.text = "Nivel 2";
+                        uiAnimator.SetTrigger("LevelUp");
+                    }
                     break;
                 case 3:
-                    levelText.text = "Nivel 3";
+                    {
+                uiAnimator.SetTrigger("LevelUp");
+                        levelText.text = "Nivel 3";
+                    }
                     break;
                 default:
                     levelText.text = "ERROR";
@@ -276,6 +274,8 @@ namespace Assets.Scripts
             StopGame(false);
 
             MenuPanel.SetActive(MenuPanel.gameObject.activeSelf ? false : true);
+            uiAnimator.SetBool("ShowMenu", MenuPanel.gameObject.activeSelf ? true : false);
+
             //GeneralGameValues.StopGame();
             //soundManager.PlaySFXClipName("menu-game");
         }
@@ -311,13 +311,15 @@ namespace Assets.Scripts
             }
             else if (pNameElement.Contains("HealthDown"))
             {
+                HealthAdd(1);
                 StartCoroutine(cameraShake.Shake(0.1f, 0.3f));
                 soundManager.PlayElementSound("HealthDown");
-                HealthAdd(1);
+                uiAnimator.SetTrigger("RedRune");
             }
             else if (pNameElement.Contains("TimeUp"))
             {
                 TimeAdd(-1);
+                StartCoroutine(cameraShake.Shake(0.1f, 0.3f));
                 soundManager.PlayElementSound("TimeUp");
                 uiAnimator.SetTrigger("YellowRune");
             }
@@ -342,12 +344,6 @@ namespace Assets.Scripts
 
             if (auxY > GeneralGameValues.MaxHealth)
                 auxY = GeneralGameValues.MaxHealth;
-
-            healthTrans.transform.position =
-              new Vector3(
-              healthTrans.transform.position.x,
-              auxY,
-              healthTrans.transform.position.z);
 
             health.transform.position =
                 new Vector3(

@@ -21,7 +21,6 @@ namespace Assets.Scripts
             CantElementSpanw = GeneralGameValues.CantElemetsSpawn;
             VelLevel = GeneralGameValues.SlowTimeStarted;
             MaxHealth = GeneralGameValues.MaxHealth;
-            MinHealth = GeneralGameValues.MinHealth;
             ClockTime = GeneralGameValues.TiempoReloj;
             SpeedHealth = GeneralGameValues.SpeedLife;
         }

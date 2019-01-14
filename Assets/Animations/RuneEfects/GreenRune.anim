@@ -27,7 +27,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: 0
+        value: 0.39705884
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -83,7 +83,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: 1
+        value: 0.5259636
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -145,14 +145,14 @@ AnimationClip:
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3267363624
-      attribute: 1571785585
+      attribute: 1840221041
       script: {fileID: 0}
       typeID: 23
       customType: 22
       isPPtrCurve: 0
     - serializedVersion: 2
       path: 3267363624
-      attribute: 1840221041
+      attribute: 1571785585
       script: {fileID: 0}
       typeID: 23
       customType: 22
@@ -197,7 +197,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: 0
+        value: 0.39705884
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -253,7 +253,7 @@ AnimationClip:
         tangentMode: 136
       - serializedVersion: 2
         time: 0.5
-        value: 1
+        value: 0.5259636
         inSlope: 0
         outSlope: 0
         tangentMode: 136

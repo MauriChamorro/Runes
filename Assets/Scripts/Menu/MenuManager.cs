@@ -54,7 +54,16 @@ public class MenuManager : MonoBehaviour
         if (!mutedMusic.isOn)
             PlayMusicClipName();
 
+
+        // SceneManager.LoadScene("Game");
+        FadeManager.Instance.FadeOut(1, Color.red, LoadGame);
+    }
+
+    private void LoadGame()
+    {
         SceneManager.LoadScene("Game");
+
+        FadeManager.Instance.FadeIn(1, Color.red);
     }
 
     public void QuitGame()

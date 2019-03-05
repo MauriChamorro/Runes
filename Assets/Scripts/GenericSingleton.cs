@@ -2,26 +2,26 @@
 
 public class GenericSingleton<T> : MonoBehaviour where T : MonoBehaviour
 {
-    private static T instance = null;
+    private static T _instance = null;
     private static readonly object padlock = new object();
 
-    public static T Instance { get { return instance; } private set { instance = value; } }
+    public static T Instance { get { return _instance; } private set { _instance = value; } }
 
     protected virtual void Awake()
     {
-        if (instance == null)
+        if (_instance == null)
         {
             lock (padlock)
             {
-                if (instance == null)
+                if (_instance == null)
                 {
-                    instance = this as T;
+                    _instance = this as T;
                     DontDestroyOnLoad(this.gameObject);
                 }
 
             }
         }
-        else if (instance != this)
+        else if (_instance != this)
         {
             Destroy(gameObject);
         }

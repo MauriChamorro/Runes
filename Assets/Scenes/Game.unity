@@ -3647,7 +3647,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 803.8, y: 587.7}
+  m_AnchoredPosition: {x: 982, y: 587.7}
   m_SizeDelta: {x: 181.6, y: 259.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1002411083
@@ -3662,7 +3662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470fc2c29b9d56c4492587030a8df7d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cardDisplayed: {fileID: 11400000, guid: 0aa039add8867a94c811ecfcb8ca7403, type: 2}
+  _cardDisplayed: {fileID: 11400000, guid: 2e73c0a91755e334c89f3c1c93ce34ca, type: 2}
   _artwork: {fileID: 1941572210}
   _nameCard: {fileID: 1828984619}
   _desciption: {fileID: 298214418}

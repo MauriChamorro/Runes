@@ -1,7 +1,7 @@
-﻿
+﻿using Assets.Scripts.Interfaces;
 using UnityEngine;
 
-namespace Assets.Scripts.Interfaces
+namespace Interfaces
 {
     public interface ITrajectory
     {

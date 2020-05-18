@@ -1,19 +1,20 @@
 ﻿using Assets.Scripts;
-using Assets.Scripts.Interfaces;
+using Interfaces;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Element : MonoBehaviour
 {
-    private ITrajectory trayectoria;
+    private ITrajectory _trajectory;
     private Rect LimitViewport;
     private float startPosX;
     private float startPosY;
+    private GameManager _gameManager;
 
     private void Awake()
     {
-        Activar(false);
+        Activate(false);
     }
+
     private void Start()
     {
         LimitViewport = new Rect(-1f, -1f, 3f, 3f);
@@ -22,26 +23,28 @@ public class Element : MonoBehaviour
         startPosY = transform.position.y;
     }
 
-    public void Initializer(GameManager pGameManager)
+    public void Initialize(GameManager gameManager)
     {
+        _gameManager = gameManager;
     }
 
-    public void SetTrayectoria(ITrajectory pTrayectoria)
+    public void SetTrajectory(ITrajectory trajectory)
     {
-        trayectoria = pTrayectoria;
+        _trajectory = trajectory;
     }
 
     private void Update()
     {
         if (!LimitViewport.Contains(Camera.main.WorldToViewportPoint(transform.position)))
         {
-            Activar(false);
+            Activate(false);
         }
 
-        transform.position = trayectoria.AxisMovement(transform.position.x, transform.position.y, startPosX, startPosY, GeneralGameValues.SlowTimeStarted);
+        transform.position = _trajectory.AxisMovement(transform.position.x, transform.position.y, startPosX, startPosY,
+            GeneralGameValues.SlowTimeStarted);
     }
 
-    public void Activar(bool pActivar)
+    public void Activate(bool pActivar)
     {
         enabled = pActivar;
     }

@@ -56,14 +56,14 @@ public class MenuManager : MonoBehaviour
 
 
         // SceneManager.LoadScene("Game");
-        FadeManager.Instance.FadeOut(1, Color.red, LoadGame);
+        //FadeManager.Instance.FadeOut(1, Color.red, LoadGame);
     }
 
     private void LoadGame()
     {
         SceneManager.LoadScene("Game");
 
-        FadeManager.Instance.FadeIn(1, Color.red);
+        //FadeManager.Instance.FadeIn(1, Color.red);
     }
 
     public void QuitGame()

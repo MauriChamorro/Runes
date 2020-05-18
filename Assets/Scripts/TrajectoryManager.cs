@@ -57,7 +57,7 @@ public class TrajectoryManager : MonoBehaviour
         {
             Element selectedToGo = ElementList[Random.Range(0, ElementList.Count)];
 
-            selectedToGo.Activar(true);
+            selectedToGo.Activate(true);
         }
         else
         {
@@ -102,7 +102,7 @@ public class TrajectoryManager : MonoBehaviour
         for (int i = 0; i < CantSpawn; i++)
         {
             Element instance = Instantiate(ElementsPrefabs[Random.Range(0, ElementsPrefabs.Count)], goParent.transform).GetComponent<Element>();
-            instance.Initializer(gameManager);
+            instance.Initialize(gameManager);
             ElementList.Add(instance);
         }
     }
@@ -161,10 +161,10 @@ public class TrajectoryManager : MonoBehaviour
     {
         List<Transform> ListaSport = new List<Transform>();
 
-        ObtenerSpotHijos(ListaSport, spotPointR);
-        ObtenerSpotHijos(ListaSport, spotPointB);
-        ObtenerSpotHijos(ListaSport, spotPointL);
-        ObtenerSpotHijos(ListaSport, spotPointT);
+        SetChildrenSpots(ListaSport, spotPointR);
+        SetChildrenSpots(ListaSport, spotPointB);
+        SetChildrenSpots(ListaSport, spotPointL);
+        SetChildrenSpots(ListaSport, spotPointT);
 
         Transform[] pListaSporArray = ListaSport.ToArray();
 
@@ -178,7 +178,7 @@ public class TrajectoryManager : MonoBehaviour
         }
     }
 
-    private void ObtenerSpotHijos(List<Transform> pListaSport, Transform pSpotPoint)
+    private void SetChildrenSpots(List<Transform> pListaSport, Transform pSpotPoint)
     {
         foreach (Transform item in pSpotPoint.GetComponentsInChildren<Transform>())
         {
@@ -202,28 +202,28 @@ public class TrajectoryManager : MonoBehaviour
             {
                 ValuesLtoR values = new ValuesLtoR();
                 TrajectorySen tria = new TrajectorySen(values);
-                item.SetTrayectoria(tria);
+                item.SetTrajectory(tria);
             }
             //RtoL
             else if (mainCamera.WorldToViewportPoint(item.transform.position).x > 1.0f)
             {
                 ValuesRtoL values = new ValuesRtoL();
                 TrajectorySen tria = new TrajectorySen(values);
-                item.SetTrayectoria(tria);
+                item.SetTrajectory(tria);
             }
             //BtoT
             else if (mainCamera.WorldToViewportPoint(item.transform.position).y < 0f)
             {
                 ValuesBtoT values = new ValuesBtoT();
                 TrajectorySen tria = new TrajectorySen(values);
-                item.SetTrayectoria(tria);
+                item.SetTrajectory(tria);
             }
             //TtoB
             else if (mainCamera.WorldToViewportPoint(item.transform.position).y > 1.0f)
             {
                 ValuesTtoB values = new ValuesTtoB();
                 TrajectorySen tria = new TrajectorySen(values);
-                item.SetTrayectoria(tria);
+                item.SetTrajectory(tria);
             }
         }
     }
